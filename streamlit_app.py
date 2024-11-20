@@ -44,7 +44,10 @@ if time_to_insert:
         st.success('Your Smoothie is ordered!', icon="✅")
     else:
         st.warning('Please select your ingredients before submitting.')  # Aviso si no hay ingredientes
-        
+
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)     
 
 st.write(my_insert_stmt)
 st.stop()
